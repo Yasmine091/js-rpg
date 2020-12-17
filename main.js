@@ -1,7 +1,10 @@
+import Human from './lib/races/Human.js'
+import Elf from './lib/races/Elf.js'
+import Dwarf from './lib/races/Dwarf.js'
 import Hero from './lib/Hero.js';
 import BattleSimulation from './lib/BattleSim.js';
-import Enemy from './lib/Enemy.js';
-import Battle from './lib/Battle.js';
+/* import Enemy from './lib/Enemy.js';
+import Battle from './lib/Battle.js'; */
 
 class Game {
     constructor(name, race, enemy){
@@ -12,9 +15,9 @@ class Game {
     
 }
 
-let hero = new Hero("Kuki", "Elf");
-let enemy = new Hero("Yasmine", "Human");
-let enemy2 = new Hero("Yasou", "Dwarf");
+let hero = new Elf("Kuki", "Elf");
+let enemy = new Human("Yasmine", "Human");
+let enemy2 = new Dwarf("Yasou", "Dwarf");
 
 /* 
 enemy.setHitStrength();
@@ -26,15 +29,19 @@ console.log(enemy.attack()); */
     console.log(enemy.setXp()); 
 */
 
-let simBattle1 = new BattleSimulation(enemy, enemy2);
+let simBattle1 = new BattleSimulation(hero, enemy2);
 
-console.log(simBattle1.enemyStats());
-console.log(simBattle1.extraEnemyStats());
+console.log(simBattle1.p1Stats());
+console.log(simBattle1.p2Stats());
 
-console.log(simBattle1.heroHit());
-console.log(simBattle1.heroHit());
-console.log(simBattle1.heroHit());
-console.log(simBattle1.heroHit());
+//console.log(simBattle1.p1Hit());
+//console.log(simBattle1.p2Hit());
+
+console.log(simBattle1.HeroVsEnemies());
+//console.log(simBattle1.EnemyVsEnemy());
+
+console.log(simBattle1.p1Stats());
+console.log(simBattle1.p2Stats());
 
 
 document.addEventListener('submit', () => {
