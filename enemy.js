@@ -1,22 +1,25 @@
-class Enemy {
-    
-    constructor(x) {
-      this.name = x;
-      this.health = 100;
-      this.hitStrength = 0;
+export default class Enemy {
+   
+    constructor(name,hitStrength) {
+      this.name = name;
       this.level = 1;
       this.experience = 0;
+      this.health = 1000;
+      this.hitStrength = hitStrength;
     }
 
     getName(){return this.name}; 
     
     setName(value){this.name = value};
     
-    getHealth(){return this.health};
+    getHealth(){console.log(this.name + " health is now: " + this.health)};
     
-    setHealth(value){this.health = value};
+    setHealth(damage){this.health = this.health - damage};
     
-    attack(){};
+    attack(){let damage = this.hitStrength*this.level;
+    console.log(this.name + " attack! Damage is : " +damage +"!");
+    return damage;
+  };
     
     die(){};
     
@@ -33,5 +36,4 @@ class Enemy {
     setHitStrength(value){ this.hitStrength = value};
   }
 
-  
   
