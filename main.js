@@ -1,37 +1,49 @@
 import Enemy from './enemy.js';
 import Battle from './battle.js';
 
-let Dragon = new Enemy("Dragon",200);
+import Dragon from './dragon.js';
+import Golem from './golem.js';
+import Berserker from './berserker.js';
+import Assassin from './assassin.js';
+import Griffin from './griffin.js';
+import Wereworf from './wereworf.js';
 
-let Griffin = new Enemy("Griffin",300);
+let Dradra = new Dragon("Dradra",100);
 
-Dragon.fly = function(){
-      console.log(this.name + " is flying...");
-      
-}
+let Grigri = new Griffin("Grigri",300);
 
-Dragon.attackFromSky = function(){
-  let power = this.hitStrength*this.level + this.hitStrength*this.level*0.1;
-  console.log(this.name + " attack from sky! Damage is : " + power +"!");
-  return power;
-}
+let Gogo = new Golem("Gogo",800);
 
-console.log(Griffin);
+let Berber = new Berserker("Berber",600);
 
-console.log(Dragon);
+let Sasa = new Assassin("Sasa",200);
 
+let Wewe = new Wereworf("Wewe",200);
 
+console.log(Dradra);
+console.log(Grigri);
 
-Dragon.attack();
+console.log(Gogo);
 
-Dragon.fly();
+console.log(Berber);
+console.log(Sasa);
+console.log(Wewe);
 
-Dragon.attackFromSky();
+//Dragon.attack();
 
-let testBattle = new Battle(Dragon,Griffin);
+//Dragon.fly();
+
+//Dragon.attackFromSky();
+
+let testBattle = new Battle(Dradra,Gogo);
 
 testBattle.gameStarts();
 
-testBattle.player1Hit();
+testBattle.p1Attack();
 
-testBattle.stats();
+testBattle.p1Attack();
+
+
+testBattle.p1Attack();
+testBattle.p1Attack();
+testBattle.p1Attack();

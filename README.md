@@ -49,7 +49,7 @@ Humans stat: { name: "Cloud" , health: 100, hitStrength: 30, lvl: 1, xp: 0, race
 
 Wereworf stat: { name: "Thad" , health: 30, hitStrength: 10, lvl: 1, xp: 0 };
 
-Tour 1 : Cloud attaque en 1er avec hitStrength * lvl => 30
+Tour 1 : Cloud attaquegi en 1er avec hitStrength * lvl => 30
 
 Thad recoit 30 de degat -50% => 15, Thad health passe a 15
 
