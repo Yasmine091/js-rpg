@@ -37,8 +37,8 @@ document.addEventListener('submit', () => {
         clearStats("p1-Stats");
         clearStats("p2-Stats");
         clearSimulation();
-        simBattle.HeroVsEnemies();
-        //simBattle1.EnemyVsEnemy();
+        //simBattle.HeroVsEnemies();
+        simBattle.EnemyVsEnemy();
 
     }
 

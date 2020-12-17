@@ -1,10 +1,10 @@
 main {
-    margin: auto;
-    max-width: max-content;
+    margin: 0rem 2%;
 }
 
-div#simulation {
-    width: 30rem;
+.terminal {
+    max-width: 26rem;
+    width: 100%;
     height: 20rem;
     background-color: rgb(37, 33, 68);
     border: 2px solid rgb(20, 17, 46);
@@ -19,9 +19,10 @@ h4#term-title{
     background-color: rgb(20, 17, 46);
     padding: 0.5rem 0rem;
     margin: 0rem;
-    position: fixed;
+    position: absolute;
     display: block;
     width: inherit;
+    max-width: 26rem;
 }
 
 h4#stats-title{
@@ -37,24 +38,7 @@ div#battle-sim {
 }
 
 div#simulation-stats {
-    width: 30rem;
-    height: 20rem;
-    background-color: rgb(37, 33, 68);
-    border: 2px solid rgb(20, 17, 46);
-    border-radius: 0.1rem;
-    overflow: auto;
-    display: inline-block;
-}
-
-div#simulation-ranking {
-    width: 30rem;
-    height: 20rem;
-    background-color: rgb(37, 33, 68);
-    border: 2px solid rgb(20, 17, 46);
-    border-radius: 0.1rem;
-    overflow: auto;
-    resize: both;
-    display: inline-block;
+    overflow: auto !important;
 }
 
 div#p1-Stats, div#p2-Stats{
@@ -81,38 +65,79 @@ div.flex div{
 div.flex div li {
     list-style: none;
     display: inline-block;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 
-li.name {
+.name {
     color: rgb(165, 113, 207);
 }
 
-li.race{
+.race{
     color: #00e7ff;
 }
 
 
-li.hp {
+.hp {
     color: #71f756;
 }
 
-li.attack {
+.attack {
     color: #fb1777;
 }
 
-li.lvl {
+.lvl {
     color: #ffff3c;
 }
 
-li.xp {
+.xp {
     color: #ffff3c;
 }
 
-li progress#healthbar::-webkit-progress-value::before {
-    content: '80%';
+#healthbar {
+    width: 90%;
+}
+
+#expbar {
+    width: 90%;
+}
+
+#ranking-table{
+    width: inherit;
+}
+
+#ranking-table thead {
+    text-align: center;
+    color: rgb(165, 113, 207);
+    background-color: rgb(32, 28, 56);
+    padding: 0.5rem 0rem;
+    margin: 2.1rem -0.1rem;
     position: absolute;
-    right: 0;
-    top: -125%;
-  }
+    display: block;
+    width: inherit;
+    max-width: 26rem;
+}
+
+#ranking-table thead th {
+    width: 1%;
+}
+
+#ranking-table tbody td {
+    width: 1%;
+}
+
+#ranking-list {
+    margin-top: 5.5rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 448px){
+    #term-title{
+        max-width: 92% !important;
+    }
+    #ranking-table thead{
+        max-width: 92% !important;
+    }
+}

@@ -20,22 +20,36 @@
             <button type="submit">Start !</button>
         </form>
         <br>
-        <div id="simulation-stats">
+        <div id="simulation-stats" class="terminal">
             <h4 id="stats-title">Battle stats</h4>
             <br>
             <div id="p1-Stats"></div>
             <br>
             <div id="p2-Stats"></div>
         </div>
-        <div id="simulation">
+        <div id="simulation" class="terminal">
             <h4 id="term-title">Battle simulation</h4>
             <br>
             <div id="battle-sim">
                 
             </div>
         </div>
-        <div id="simulation-ranking">
+        <div id="simulation-ranking" class="terminal">
             <h4 id="term-title">Battle ranking</h4>
+            <table id="ranking-table">
+            <thead>
+                <tr>
+                    <th class="name">Name</th>
+                    <th class="lvl">Level</th>
+                    <th class="attack">Attack</th>
+                    <th class="race">Race</th>
+                </tr>
+            </thead>
+            <tbody id="ranking-list">
+                
+
+            </tbody>
+            </table>
         </div>
     </main>
     <script src="main.js" type=module></script>
