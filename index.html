@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>RPG</title>
 </head>
+
 <body>
-    <form action="">
-        <input type="text" placeholder="Le nom de ton héros" value="" id="name">
-        <select name="" id="">
-            <option value="" selected>Race</option>
-            <option value="" selected>Race</option>
-            <option value="" selected>Race</option>
-        </select>
-        <button type="submit">Start !</button>
-    </form>
+    <main>
+        <form action="">
+            <input type="text" placeholder="Le nom de ton héros" value="" id="name">
+            <select name="" id="">
+                <option value="" selected>Race</option>
+                <option value="" selected>Race</option>
+                <option value="" selected>Race</option>
+            </select>
+            <button type="submit">Start !</button>
+        </form>
+        <br>
+        <div id="simulation-stats">
+            <h4 id="stats-title">Battle stats</h4>
+            <br>
+            <div id="p1-Stats"></div>
+            <br>
+            <div id="p2-Stats"></div>
+        </div>
+        <div id="simulation">
+            <h4 id="term-title">Battle simulation</h4>
+            <br>
+            <div id="battle-sim">
+                
+            </div>
+        </div>
+        <div id="simulation-ranking">
+            <h4 id="term-title">Battle ranking</h4>
+        </div>
+    </main>
     <script src="main.js" type=module></script>
 </body>
+
 </html>

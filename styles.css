@@ -1,0 +1,118 @@
+main {
+    margin: auto;
+    max-width: max-content;
+}
+
+div#simulation {
+    width: 30rem;
+    height: 20rem;
+    background-color: rgb(37, 33, 68);
+    border: 2px solid rgb(20, 17, 46);
+    border-radius: 0.1rem;
+    overflow: auto;
+    resize: both;
+    display: inline-block;
+}
+h4#term-title{
+    text-align: center;
+    color: rgb(165, 113, 207);
+    background-color: rgb(20, 17, 46);
+    padding: 0.5rem 0rem;
+    margin: 0rem;
+    position: fixed;
+    display: block;
+    width: inherit;
+}
+
+h4#stats-title{
+    text-align: center;
+    color: rgb(165, 113, 207);
+    background-color: rgb(20, 17, 46);
+    padding: 0.5rem 0rem;
+    margin: 0rem;
+}
+
+div#battle-sim {
+    margin: 0.5rem;
+}
+
+div#simulation-stats {
+    width: 30rem;
+    height: 20rem;
+    background-color: rgb(37, 33, 68);
+    border: 2px solid rgb(20, 17, 46);
+    border-radius: 0.1rem;
+    overflow: auto;
+    display: inline-block;
+}
+
+div#simulation-ranking {
+    width: 30rem;
+    height: 20rem;
+    background-color: rgb(37, 33, 68);
+    border: 2px solid rgb(20, 17, 46);
+    border-radius: 0.1rem;
+    overflow: auto;
+    resize: both;
+    display: inline-block;
+}
+
+div#p1-Stats, div#p2-Stats{
+    width: auto;
+    height: 6rem;
+    background-color: rgb(37, 33, 68);
+    border: 2px solid rgb(20, 17, 46);
+    border-radius: 0.1rem;
+    color: white;
+    margin: auto;
+    padding: 0.5rem;
+    display: block;
+    margin: 0rem 0.5rem;
+}
+
+div.flex {
+    display: flex;
+}
+
+div.flex div{
+    margin: 0.25rem auto;
+}
+
+div.flex div li {
+    list-style: none;
+    display: inline-block;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+li.name {
+    color: rgb(165, 113, 207);
+}
+
+li.race{
+    color: #00e7ff;
+}
+
+
+li.hp {
+    color: #71f756;
+}
+
+li.attack {
+    color: #fb1777;
+}
+
+li.lvl {
+    color: #ffff3c;
+}
+
+li.xp {
+    color: #ffff3c;
+}
+
+li progress#healthbar::-webkit-progress-value::before {
+    content: '80%';
+    position: absolute;
+    right: 0;
+    top: -125%;
+  }
