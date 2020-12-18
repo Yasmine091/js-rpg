@@ -2,7 +2,7 @@ import Enemy from './enemy.js';
 
 export default class Dragon extends Enemy{
 
-
+     
 
       setHealth(damage){this.health = this.health - 0.5*damage};
 

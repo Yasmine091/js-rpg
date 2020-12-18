@@ -2,14 +2,25 @@ export default class Enemy {
       level = 1;
       experience = 0;
       health = 1000;
-    constructor(name,hitStrength) {
+      hitStrength = 100;
+     
+
+    constructor(name,race) {
       this.name = name;
      
-      this.hitStrength = hitStrength;
+      this.race = race;
 
       
     }
 
+
+    getRace() {
+      return this.race;
+   }
+
+   setRace(race) {
+      this.race = race;
+   }
     getName(){return this.name}; 
     
     setName(value){this.name = value};
@@ -17,13 +28,24 @@ export default class Enemy {
     getHealth(){
       if(this.health<=0){this.die()}
       else{console.log(this.name + " health: " + this.health)}
+      return this.health;
+
     };
     
-    setHealth(damage){this.health = this.health - damage};
+    setHealth(damage){
+      if(this.race == "Assassin" ){
+        this.health = this.health - damage
+          }
+      };
     
-    attack(){let damage = this.hitStrength*this.level;
-    console.log(this.name + " attack! Damage: " +damage +"!");
-    return damage;
+    attack(){
+      
+      if(this.race !== "Dragon" && this.race !== "Griffin" && this.race !=="Assassin"){
+        let damage = this.hitStrength*this.level;
+        console.log(this.name + " attack! Damage: " +damage +"!");
+        return damage;
+      }
+     
   };
     
     die(){console.log(this.name + " is dead!")};

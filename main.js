@@ -8,17 +8,17 @@ import Assassin from './assassin.js';
 import Griffin from './griffin.js';
 import Wereworf from './wereworf.js';
 
-let Dradra = new Dragon("Dradra",100);
+let Dradra = new Dragon("Dradra","Dragon");
 
-let Grigri = new Griffin("Grigri",300);
+let Grigri = new Griffin("Grigri","Griffin");
 
-let Gogo = new Golem("Gogo",800);
+let Gogo = new Golem("Gogo","Golem");
 
-let Berber = new Berserker("Berber",600);
+let Berber = new Berserker("Berber","Berseker");
 
-let Sasa = new Assassin("Sasa",200);
+let Sasa = new Assassin("Sasa","Assassin");
 
-let Wewe = new Wereworf("Wewe",200);
+let Wewe = new Wereworf("Wewe","Wereworf");
 
 console.log(Dradra);
 console.log(Grigri);
@@ -35,7 +35,9 @@ console.log(Wewe);
 
 //Dragon.attackFromSky();
 
-let testBattle = new Battle(Dradra,Gogo);
+//let testBattle = new Battle(Dradra,Gogo);
+let testBattle = new Battle(Sasa,Wewe);
+
 
 testBattle.gameStarts();
 
@@ -44,6 +46,9 @@ testBattle.p1Attack();
 testBattle.p1Attack();
 
 
+testBattle.p1Attack();
+testBattle.p1Attack();
+testBattle.p1Attack();
 testBattle.p1Attack();
 testBattle.p1Attack();
 testBattle.p1Attack();
