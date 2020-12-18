@@ -10,46 +10,102 @@
 
 <body>
     <main>
-        <form action="">
-            <input type="text" placeholder="Le nom de ton héros" value="" id="name">
-            <select name="" id="">
-                <option value="" selected>Race</option>
-                <option value="" selected>Race</option>
-                <option value="" selected>Race</option>
-            </select>
-            <button type="submit">Start !</button>
-        </form>
-        <br>
-        <div id="simulation-stats" class="terminal">
-            <h4 id="stats-title">Battle stats</h4>
-            <br>
-            <div id="p1-Stats"></div>
-            <br>
-            <div id="p2-Stats"></div>
-        </div>
-        <div id="simulation" class="terminal">
-            <h4 id="term-title">Battle simulation</h4>
-            <br>
-            <div id="battle-sim">
-                
-            </div>
-        </div>
-        <div id="simulation-ranking" class="terminal">
-            <h4 id="term-title">Battle ranking</h4>
-            <table id="ranking-table">
-            <thead>
-                <tr>
-                    <th class="name">Name</th>
-                    <th class="lvl">Level</th>
-                    <th class="attack">Attack</th>
-                    <th class="race">Race</th>
-                </tr>
-            </thead>
-            <tbody id="ranking-list">
-                
+        <div id="rpg-customizator">
+            <h4 id="rpg-title">WELCOME TO OUR RGP !</h4>
+            <form action="" onsubmit="return false">
+                <div class="formflex">
+                    <div>
+                        <label for="p1-name">First figther</label>
+                        <input type="text" placeholder="P1 : Hero or enemy name" value="" id="p1-name">
+                        <select name="" id="player-1">
+                            <option value="" selected>Race</option>
+                            <optgroup label="Heroes">
+                                <option value="Human">Human</option>
+                                <option value="Dwarf">Dwarf</option>
+                                <option value="Elf">Elf</option>
+                            </optgroup>
+                            <optgroup label="Enemies">
+                                <option value="Dragon">Dragon</option>
+                                <option value="Golem">Golem</option>
+                                <option value="Assassin">Assassin</option>
+                                <option value="Griffin">Griffin</option>
+                                <option value="Berserker">Berserker</option>
+                                <option value="Werewolf">Werewolf</option>
+                            </optgroup>
+                        </select>
+                    </div>
 
-            </tbody>
-            </table>
+                    <div id="Customization">
+                        <label for="p2-name">Second fighter</label>
+                        <input type="text" placeholder="P2 : Enemy name" value="" id="p2-name">
+                        <select name="" id="player-2">
+                            <option value="" selected>Race</option>
+                            <optgroup label="Heroes">
+                                <option value="Human">Human</option>
+                                <option value="Dwarf">Dwarf</option>
+                                <option value="Elf">Elf</option>
+                            </optgroup>
+                            <optgroup label="Enemies">
+                                <option value="Dragon">Dragon</option>
+                                <option value="Golem">Golem</option>
+                                <option value="Assassin">Assassin</option>
+                                <option value="Griffin">Griffin</option>
+                                <option value="Berserker">Berserker</option>
+                                <option value="Werewolf">Werewolf</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div>
+                            <button type="submit" id="simulation">Run a simulation !</button>
+                        <button type="submit" id="battle">Start a battle !</button>
+                        <button type="submit" id="battle">Hero VS All !</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="Game">
+            <div id="simulation" class="terminal">
+                <h4 id="term-title">Battle</h4>
+                <br>
+                <div id="battle-game">
+
+                </div>
+                <h4 id="term-btns">
+                    <button type="submit" id="start">Start</button>
+                    <button type="submit" id="attack">Attack</button>
+                    <button type="submit" id="restart">Restart</button>
+                </h4>
+            </div>
+            <div id="simulation-stats" class="terminal">
+                <h4 id="stats-title">Battle stats</h4>
+                <br>
+                <div id="p1-Stats"></div>
+                <br>
+                <div id="p2-Stats"></div>
+            </div>
+            <br>
+            <div id="simulation" class="terminal">
+                <h4 id="term-title">Battle simulation</h4>
+                <br>
+                <div id="battle-sim">
+
+                </div>
+            </div>
+            <div id="simulation-ranking" class="terminal">
+                <h4 id="term-title">Battle ranking</h4>
+                <table id="ranking-table">
+                    <thead>
+                        <tr>
+                            <th class="name">Name</th>
+                            <th class="lvl">Level</th>
+                            <th class="attack">Attack</th>
+                            <th class="race">Race</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ranking-list">
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
     <script src="main.js" type=module></script>
