@@ -5,23 +5,18 @@ import Dragon from './lib/enemies/Dragon.js';
 import Hero from './lib/Hero.js';
 import Enemy from './lib/Enemy.js';
 import BattleSimulation from './lib/BattleSim.js';
-import { clearSimulation, clearStats } from '../../lib/functions.js';
+import { clearSimulation, clearStats, selectTerminal } from '../../lib/functions.js';
 
 /* import Enemy from './lib/Enemy.js';
 import Battle from './lib/Battle.js'; */
 
-let running = false;
-
-document.addEventListener('submit', function() {
-
-    location.href = "#Game";
+function customRPG() {
 
     let race1 = document.getElementById("player-1").selectedIndex;
     let race2 = document.getElementById("player-2").selectedIndex;
 
     let name1 = document.getElementById('p1-name').value;
     let name2 = document.getElementById('p2-name').value;
-
 
     let player1;
     let player2;
@@ -86,17 +81,54 @@ document.addEventListener('submit', function() {
             break;
     }
 
-    let simBattle = new BattleSimulation(player1, player2);
+    return new BattleSimulation(player1, player2);
 
-    if (running === false) {
+}
 
-        running = true;
+let running1 = false;
+let running2 = false;
+
+let runSim1 = document.getElementById("start-sim1");
+runSim1.addEventListener('click', function (callback) {
+
+    running1 = false;
+
+    location.href = "#Game";
+
+    let simBattle = customRPG();
+
+    while (running1 === false && running2 === false) {
+
+        running1 = true;
         clearStats("p1-Stats");
         clearStats("p2-Stats");
         clearSimulation();
-        //simBattle.HeroVsEnemies();
         simBattle.EnemyVsEnemy();
+        callback();
+        //running1 = false;
+    }
 
+}
+);
+
+let runSim2 = document.getElementById("start-sim2");
+runSim2.addEventListener('click', function (callback) {
+
+    running2 = false;
+
+    location.href = "#Game";
+
+    let simBattle = customRPG();
+
+    while (running2 === false && running1 === false) {
+
+        running2 = true;
+        clearStats("p1-Stats");
+        clearStats("p2-Stats");
+        clearSimulation();
+        simBattle.HeroVsEnemies();
+        callback();
+        //running2 = false;
     }
 
 }

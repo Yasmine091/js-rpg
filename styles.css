@@ -40,14 +40,20 @@ h4#rpg-title{
     position: absolute;
     display: block;
     width: inherit;
-    max-width: 56.7rem;
+    max-width: inherit;
+    text-transform: uppercase;
 }
 
 div.formflex{
     display: block;
-    margin: 0rem;
-    margin-top: 3rem;
+    margin: 4rem 0rem;
     text-align: center;
+}
+
+div.instructions {
+    display: block;
+    margin: 4rem 2rem;
+    color: white;
 }
 
 div.formflex div {
@@ -57,34 +63,41 @@ div.formflex div {
 }
 
 div.formflex div label {
-    color: #71f756;
     font-weight: bolder;
     display: block;
-    padding-top: 0.3rem;
+    padding-top: 0.25rem;
     height: 1.5rem;
     background-color: rgb(20, 17, 46);
-    border: 2px solid rgb(20, 17, 46);
+    border: 2px solid;
     border-radius: 0.1rem;
+    text-transform: uppercase;
 }
 
 div.formflex div input[type="text"]{
-    color:#71f756;
-    background-color: rgb(37, 33, 68);
-    border: 2px solid rgb(20, 17, 46);
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid;
 }
 
 div.formflex div select {
-    color: rgb(37, 33, 68);
-    background-color: rgb(165, 113, 207);
-    border: 2px solid rgb(165, 113, 207);
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid;
     height: 2rem !important;
+    text-transform: uppercase;
+    width: 17.4rem;
 }
 
 div.formflex div button {
-    color: rgb(37, 33, 68);
-    background-color: rgb(165, 113, 207);
-    border: 2px solid rgb(165, 113, 207);
+    background-color: transparent;
+    border: 2px solid;
     height: 2rem !important;
+    text-transform: uppercase;
+}
+
+div.formflex div button:hover {
+    background-color: rgb(59, 53, 99) !important;
+    cursor: pointer;
 }
 
 div.formflex div button, select, label, input[type="text"] {
@@ -104,6 +117,7 @@ h4#term-title{
     display: block;
     width: inherit;
     max-width: 28rem;
+    text-transform: uppercase;
 }
 
 h4#term-btns{
@@ -130,6 +144,7 @@ h4#stats-title{
     background-color: rgb(20, 17, 46);
     padding: 0.5rem 0rem;
     margin: 0rem;
+    text-transform: uppercase;
 }
 
 div#battle-sim {
@@ -186,11 +201,11 @@ div.flex div li {
 }
 
 .lvl {
-    color: #ffff3c;
+    color: #ffaa3c;
 }
 
 .xp {
-    color: #ffff3c;
+    color: #fcff3c;
 }
 
 #ranking-table{
@@ -226,15 +241,15 @@ div.flex div li {
 
 @media (max-width: 448px){
     #term-title{
-        max-width: 92% !important;
+        max-width: 96% !important;
     }
     #term-btns{
-        max-width: 92% !important;
+        max-width: 96% !important;
     }
     h4#rpg-title{
-        max-width: 92% !important;
+        max-width: 96% !important;
     }
     #ranking-table thead{
-        max-width: 92% !important;
+        max-width: 96% !important;
     }
 }

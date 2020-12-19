@@ -15,9 +15,9 @@
             <form action="" onsubmit="return false">
                 <div class="formflex">
                     <div>
-                        <label for="p1-name">First figther</label>
-                        <input type="text" placeholder="P1 : Hero or enemy name" value="" id="p1-name">
-                        <select name="" id="player-1">
+                        <label for="p1-name" class="race">First figther</label>
+                        <input type="text" class="race" placeholder="Fighter name" value="" id="p1-name">
+                        <select name="" id="player-1" class="race">
                             <option value="" selected>Race</option>
                             <optgroup label="Heroes">
                                 <option value="Human">Human</option>
@@ -36,9 +36,9 @@
                     </div>
 
                     <div id="Customization">
-                        <label for="p2-name">Second fighter</label>
-                        <input type="text" placeholder="P2 : Enemy name" value="" id="p2-name">
-                        <select name="" id="player-2">
+                        <label for="p2-name" class="attack">Second fighter</label>
+                        <input type="text" class="attack" placeholder="Fighter name" value="" id="p2-name">
+                        <select name="" id="player-2" class="attack">
                             <option value="" selected>Race</option>
                             <optgroup label="Heroes">
                                 <option value="Human">Human</option>
@@ -56,12 +56,36 @@
                         </select>
                     </div>
                     <div>
-                            <button type="submit" id="simulation">Run a simulation !</button>
-                        <button type="submit" id="battle">Start a battle !</button>
-                        <button type="submit" id="battle">Hero VS All !</button>
+                        <button type="submit" id="start-sim1" class="hp">Run simulation</button>
+                        <button type="submit" id="battle" class="lvl">Start a battle</button>
+                        <button type="submit" id="start-sim2" class="xp">One vs Everyone</button>
                     </div>
                 </div>
             </form>
+        </div>
+        <div id="rpg-customizator">
+            <h4 id="rpg-title">Instructions</h4>
+            <div class="instructions">
+
+                <p>You can customize your <b class="race">first fighter</b> and <b class="attack">second fighter</b>
+                    names and races,
+                    you can choose up to 9 races that include both Heroes and Enemies.</p>
+
+                <p class="hp">To start a simulation you need to customize both of your fighters and then click the <b>"Run
+                    simulation"</b> button.
+                    Simulations are automatized fights between your heroes, wich means you won't be able to interact.
+                </p>
+
+                <p class="lvl">You can start a battle by customizing your fighters and clicking the <b>"Start game"</b> button.
+                    Unlike the simulation, this allows you to manually start the battle, attack and restart the game if
+                    wanted.</p>
+
+                <p class="xp">By clicking the <b>"One vs Everyone"</b> button, you can make your <b class="race">first
+                        fighter</b> fight against every signle enemie of the game.
+                    Because of this, you won't need to customize your <b class="attack">second fighter</b> since it's a
+                    One VS Everyone.</p>
+
+            </div>
         </div>
         <div id="Game">
             <div id="simulation" class="terminal">
