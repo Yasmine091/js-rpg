@@ -1,0 +1,28 @@
+{
+  "name": "rpg",
+  "version": "1.0.0",
+  "description": "## Guide d'installation * Pour installer et configurer le site, fais ceci dans le terminal : ```     · git clone git@gitlab.com:tqdxc1991/js-rpg.git     cd js-rpg/     php -S 0.0.0.0:8000 ```",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "jsdoc-chameleon-template": "^1.0.0"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.6"
+  },
+  "scripts": {
+    "generate-docs": "node_modules/.bin/jsdoc -c .jsdoc.json -d docs --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/tqdxc1991/js-rpg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/tqdxc1991/js-rpg/issues"
+  },
+  "homepage": "https://gitlab.com/tqdxc1991/js-rpg#readme"
+}

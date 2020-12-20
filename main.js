@@ -1,14 +1,16 @@
+import BattleSimulation from './lib/BattleSim.js';
 import Human from './lib/races/Human.js'
 import Elf from './lib/races/Elf.js'
 import Dwarf from './lib/races/Dwarf.js'
 import Dragon from './lib/enemies/Dragon.js';
 import Hero from './lib/Hero.js';
 import Enemy from './lib/Enemy.js';
-import BattleSimulation from './lib/BattleSim.js';
 import { clearSimulation, clearStats, selectTerminal } from '../../lib/functions.js';
+
 
 /* import Enemy from './lib/Enemy.js';
 import Battle from './lib/Battle.js'; */
+
 
 function customRPG() {
 
@@ -85,50 +87,66 @@ function customRPG() {
 
 }
 
-let running1 = false;
-let running2 = false;
+let running = false;
 
 let runSim1 = document.getElementById("start-sim1");
-runSim1.addEventListener('click', function (callback) {
-
-    running1 = false;
-
+runSim1.addEventListener('click', function () {
+    
     location.href = "#Game";
-
+    
     let simBattle = customRPG();
-
-    while (running1 === false && running2 === false) {
-
-        running1 = true;
+    
+    while (running === false) {
+        
+        running = true;
+        selectTerminal("simulation");
         clearStats("p1-Stats");
         clearStats("p2-Stats");
         clearSimulation();
         simBattle.EnemyVsEnemy();
-        callback();
-        //running1 = false;
+
+    }
+
+}
+);
+
+let runBattle = document.getElementById("battle");
+runBattle.addEventListener('click', function () {
+    
+    location.href = "#Game";
+    
+    let simBattle = customRPG();
+    
+    while (running === false) {
+        
+        running = true;
+        selectTerminal("battle");
+        clearStats("p1-Stats");
+        clearStats("p2-Stats");
+        clearSimulation();
+        simBattle.EnemyVsEnemy();
+
     }
 
 }
 );
 
 let runSim2 = document.getElementById("start-sim2");
-runSim2.addEventListener('click', function (callback) {
-
-    running2 = false;
-
+runSim2.addEventListener('click', function () {
+    
     location.href = "#Game";
-
+    
     let simBattle = customRPG();
-
-    while (running2 === false && running1 === false) {
-
-        running2 = true;
+    
+    while (running === false) {
+        
+        running = true;
+        selectTerminal("simulation");
         clearStats("p1-Stats");
         clearStats("p2-Stats");
         clearSimulation();
         simBattle.HeroVsEnemies();
-        callback();
-        //running2 = false;
+
     }
 
 }
