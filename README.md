@@ -9,9 +9,13 @@
 ```
 ## Dépendances
 * JSDoc : https://github.com/jsdoc/jsdoc
+* JSDoc export default : https://www.npmjs.com/package/jsdoc-export-default-interop
 
 ## Version en ligne
 * https://qy-rpg.surge.sh
+
+## JSDoc du RPG
+* https://qy-rpg.surge.sh/docs/
 
 ## Ressources du projet
 * Diagrammes en ligne : https://lucid.app/lucidchart/invitations/accept/09c413ad-2d33-497f-aef5-6c05a408634f
