@@ -1,0 +1,23 @@
+{
+  "name": "js-rpg",
+  "version": "1.0.0",
+  "description": "Le jeu comportera ces éléments: Une classe Hero",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/tqdxc1991/js-rpg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/tqdxc1991/js-rpg/issues"
+  },
+  "homepage": "https://gitlab.com/tqdxc1991/js-rpg#readme",
+  "devDependencies": {
+    "jsdoc": "^3.6.6"
+  }
+}

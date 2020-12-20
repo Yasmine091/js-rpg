@@ -1,6 +1,13 @@
 import Enemy from './enemy.js';
 
 export default class Battle {
+        /**
+     * Récupere le joueur 1 et le
+     * joueur 2 pour faire la battle
+     * @param {object} p1 joueur 1
+     * @param {object} p2 joueur 2
+     */
+
     constructor(p1,p2){
         this.p1 = p1;
         this.p2 = p2;
@@ -8,10 +15,29 @@ export default class Battle {
         
     }
    
-    
+     /**
+     * annoncer que le jeu commence
+     */
     gameStarts(){
         console.log("Game begins at : " + this.beginsAt +"." + this.p1.getName() + " and " + this.p2.getName() + " are ready,let's go!")
     }
+
+         /**
+     * annoncer que le jeu recommence
+     * jouer 1 health reset
+     */
+    restart(){
+        
+        this.p1.health = 1000;
+        this.gameStarts();
+    }
+
+       /**
+     * jouer lance une
+     * attaque et renvoie la santé du
+     * joueur 2 après celle-ci
+     * @returns {number} santé du joueur 2
+     */
 
     p1Attack(){
         if(this.p2.health>0){
@@ -24,17 +50,12 @@ export default class Battle {
         }
     }
 
-    p2Attack(){
-        if(this.p1.health>0){
-        let damage = this.p2.attack();
-        this.p1.setHealth(damage);
-        this.p1.getHealth();}
-
-    if(this.p1.health<=0){
-        this.gameOver();}
-    }
 
 
+
+ /**
+     * Affiche les stats du jeu
+     */
 
     stats(){
 
@@ -66,11 +87,17 @@ export default class Battle {
          console.log(result);
         }
 
-
+ /**
+     * Affiche les stats du jeu
+     *  @returns {boolean} si jeu est fini
+     */
         gameOver(){
-            if(this.p1.health <= 0 || this.p2.health <= 0 ){
+            
                 this.stats();
-                console.log("Game Over :(")}
-        }
+                console.log("Game Over :(");
+            return true;}
+              
+            
+        
 
 }
