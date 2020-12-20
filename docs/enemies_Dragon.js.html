@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: races/Dwarf.js</title>
+    <title>JSDoc: Source: enemies/Dragon.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: races/Dwarf.js</h1>
+    <h1 class="page-title">Source: enemies/Dragon.js</h1>
 
     
 
@@ -26,43 +26,57 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import Hero from '../../lib/Hero.js';
+            <pre class="prettyprint source linenums"><code>import Enemy from '../../lib/Enemy.js';
 import { send } from '../../lib/functions.js';
 
 /**
- * Classe qui répresente la race Dwarf
- * @augments Hero
+ * Classe qui répresente la race Dragon
+ * @augments Enemy
  */
-export default class Dwarf extends Hero {
+export default class Dragon extends Enemy {
 
-    /**
-     * Crée un héros avec le prénom et la
-     * race proposées par l'utilisateur
-     * @param {string} name prenom du héros
-     * @param {string} race race du héros
-     */
-    constructor(name, race) {
-        super(name, race);
-    }
+  /**
+   * Définis la santé de l'ennemi en
+   * fonction des dégats reçus
+   * @param {number} damage dégats reçus
+   */
+  setHealth(damage) {
+    this.health = this.health - 0.5 * damage;
+    send("&lt;b>" + this.name + "&lt;/b> received " + damage + " of damage", "hurt");
+  };
 
-    /**
-     * Définis la santé du héros selon
-     * avec une probabilité de 20% de
-     * reçevoir la moitié des dégats
-     * @param {number} damage dégats réçus
-     */
-    setHealth(damage) {
-        let probability = Math.floor(Math.random() * 100);
 
-        if (probability &lt;= 20) {
-            send("&lt;b>" + this.name + "&lt;/b> received " + damage / 2 + " of damage", "hurt");
-            this.health -= damage / 2;
-        }
-        else {
-            send("&lt;b>" + this.name + "&lt;/b> received " + damage + " of damage", "hurt");
-            this.health -= damage;
-        }
-    }
+
+  /**
+   * Lance un message comme quoi l'ennemi s'envole
+   */
+  fly() {
+    send("&lt;b>" + this.name + "&lt;/b> is flying...");
+  }
+
+  /**
+  * Quand l'ennemi lance une attaque pendant
+  * qu'il vole,la fonction renvoie les dégats provoqués
+  * @returns {number} dégats provoqués
+  */
+  attackFromSky() {
+    let power = this.hitStrength * this.level + this.hitStrength * this.level * 0.1;
+    send("&lt;b>" + this.name + "&lt;/b> attack from sky!", "attack");
+    return power;
+  }
+
+ /**
+ * Quand le l'ennemi lance une attaque, la
+ * fonction renvoie les dégats provoqués
+ * @returns {number} dégats provoqués
+ */
+  attack() {
+    let damage = this.hitStrength * this.level;
+    this.fly();
+    let sky = this.attackFromSky();
+    return damage + sky;
+  }
+
 }</code></pre>
         </article>
     </section>

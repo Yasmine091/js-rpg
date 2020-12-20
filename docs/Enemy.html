@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Elf</title>
+    <title>JSDoc: Class: Enemy</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Elf</h1>
+    <h1 class="page-title">Class: Enemy</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Elf<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Enemy<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>Classe qui répresente la race Elf</p></div>
+            <div class="class-description"><p>Classe qui répresente un Ennemi</p></div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="Elf"><span class="type-signature"></span>new Elf<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Enemy"><span class="type-signature"></span>new Enemy<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -93,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="races_Elf.js.html">races/Elf.js</a>, <a href="races_Elf.js.html#line7">line 7</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line4">line 4</a>
     </li></ul></dd>
     
 
@@ -127,17 +127,6 @@
     </div>
 
     
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li><a href="Hero.html">Hero</a></li>
-    </ul>
-
-
-    
 
     
 
@@ -145,10 +134,7 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            <dt><a href="Elf_Elf.html">Elf</a></dt>
-            <dd></dd>
-        
-            <dt><a href="Elf_Hero.html">Hero</a></dt>
+            <dt><a href="Enemy_Enemy.html">Enemy</a></dt>
             <dd></dd>
         </dl>
     
@@ -178,8 +164,7 @@
 
 
 <div class="description">
-    <p>Quand le héros lance une attaque, la
-fonction renvoie les dégats provoqués</p>
+    <p>fonction renvoie les dégats provoqués</p>
 </div>
 
 
@@ -200,11 +185,6 @@ fonction renvoie les dégats provoqués</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#attack">Hero#attack</a>
-    </li></ul></dd>
     
 
     
@@ -228,7 +208,7 @@ fonction renvoie les dégats provoqués</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line64">line 64</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line71">line 71</a>
     </li></ul></dd>
     
 
@@ -294,7 +274,7 @@ fonction renvoie les dégats provoqués</p>
 
 
 <div class="description">
-    <p>Quand le héros meurt, la fonction
+    <p>la fonction
 renvoie une fonction qui lance un
 message de décés dans le HTML</p>
 </div>
@@ -318,11 +298,6 @@ message de décés dans le HTML</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#die">Hero#die</a>
-    </li></ul></dd>
-    
 
     
 
@@ -345,7 +320,7 @@ message de décés dans le HTML</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line75">line 75</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
@@ -411,7 +386,7 @@ message de décés dans le HTML</p>
 
 
 <div class="description">
-    <p>Renvoie la santé du héros</p>
+    <p>Renvoie la santé du ennemi</p>
 </div>
 
 
@@ -432,11 +407,6 @@ message de décés dans le HTML</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#getHealth">Hero#getHealth</a>
-    </li></ul></dd>
     
 
     
@@ -460,7 +430,7 @@ message de décés dans le HTML</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line43">line 43</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -489,7 +459,7 @@ message de décés dans le HTML</p>
 
         
 <div class="param-desc">
-    <p>santé du héros</p>
+    <p>santé du ennemi</p>
 </div>
 
 
@@ -527,7 +497,7 @@ message de décés dans le HTML</p>
 
 <div class="description">
     <p>Renvoie la puissance
-de l'attaque du héros</p>
+de l'attaque du ennemi</p>
 </div>
 
 
@@ -548,11 +518,6 @@ de l'attaque du héros</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#getHitStrength">Hero#getHitStrength</a>
-    </li></ul></dd>
     
 
     
@@ -576,7 +541,7 @@ de l'attaque du héros</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line138">line 138</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line144">line 144</a>
     </li></ul></dd>
     
 
@@ -641,10 +606,6 @@ de l'attaque du héros</p>
 
 
 
-<div class="description">
-    <p>Renvoie le niveau du héros</p>
-</div>
-
 
 
 
@@ -663,11 +624,6 @@ de l'attaque du héros</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#getLvl">Hero#getLvl</a>
-    </li></ul></dd>
     
 
     
@@ -691,7 +647,7 @@ de l'attaque du héros</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line83">line 83</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line92">line 92</a>
     </li></ul></dd>
     
 
@@ -720,7 +676,7 @@ de l'attaque du héros</p>
 
         
 <div class="param-desc">
-    <p>niveau du héros</p>
+    <p>niveau du ennemi</p>
 </div>
 
 
@@ -757,7 +713,7 @@ de l'attaque du héros</p>
 
 
 <div class="description">
-    <p>Renvoie le prénom du héros</p>
+    <p>Renvoie le prénom du ennemi</p>
 </div>
 
 
@@ -778,11 +734,6 @@ de l'attaque du héros</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#getName">Hero#getName</a>
-    </li></ul></dd>
     
 
     
@@ -806,7 +757,7 @@ de l'attaque du héros</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line27">line 27</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -835,7 +786,7 @@ de l'attaque du héros</p>
 
         
 <div class="param-desc">
-    <p>prénom du héros</p>
+    <p>prénom du ennemi</p>
 </div>
 
 
@@ -872,7 +823,7 @@ de l'attaque du héros</p>
 
 
 <div class="description">
-    <p>Renvoie la race du héros</p>
+    <p>Renvoie la race du ennemi</p>
 </div>
 
 
@@ -893,11 +844,6 @@ de l'attaque du héros</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#getRace">Hero#getRace</a>
-    </li></ul></dd>
     
 
     
@@ -921,7 +867,7 @@ de l'attaque du héros</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line121">line 121</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line126">line 126</a>
     </li></ul></dd>
     
 
@@ -965,7 +911,7 @@ de l'attaque du héros</p>
 
 
 <div class="description">
-    <p>Renvoie l'experience du héros</p>
+    <p>Renvoie l'experience du ennemi</p>
 </div>
 
 
@@ -986,11 +932,6 @@ de l'attaque du héros</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#getXp">Hero#getXp</a>
-    </li></ul></dd>
     
 
     
@@ -1014,7 +955,7 @@ de l'attaque du héros</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line101">line 101</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line106">line 106</a>
     </li></ul></dd>
     
 
@@ -1043,7 +984,7 @@ de l'attaque du héros</p>
 
         
 <div class="param-desc">
-    <p>experience du héros</p>
+    <p>experience du ennemi</p>
 </div>
 
 
@@ -1080,7 +1021,7 @@ de l'attaque du héros</p>
 
 
 <div class="description">
-    <p>Définis la santé du héros en
+    <p>Définis la santé du ennemi en
 fonction des dégats reçus</p>
 </div>
 
@@ -1152,11 +1093,6 @@ fonction des dégats reçus</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#setHealth">Hero#setHealth</a>
-    </li></ul></dd>
-    
 
     
 
@@ -1179,7 +1115,7 @@ fonction des dégats reçus</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line52">line 52</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line58">line 58</a>
     </li></ul></dd>
     
 
@@ -1215,7 +1151,7 @@ fonction des dégats reçus</p>
     
 
     
-    <h4 class="name" id="setHitStrength"><span class="type-signature"></span>setHitStrength<span class="signature">(type)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id="setHitStrength"><span class="type-signature"></span>setHitStrength<span class="signature">()</span><span class="type-signature"> &rarr; {number}</span></h4>
     
 
     
@@ -1223,8 +1159,8 @@ fonction des dégats reçus</p>
 
 
 <div class="description">
-    <p>Définis la puissance d'attaque selon
-le type d'ennemi (qui vole ou pas)</p>
+    <p>Définis la puissance
+de l'attaque du ennemi</p>
 </div>
 
 
@@ -1233,55 +1169,6 @@ le type d'ennemi (qui vole ou pas)</p>
 
 
 
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>type d'ennemi</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -1296,11 +1183,6 @@ le type d'ennemi (qui vole ou pas)</p>
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Hero.html#setHitStrength">Hero#setHitStrength</a>
-    </li></ul></dd>
     
 
     
@@ -1322,7 +1204,7 @@ le type d'ennemi (qui vole ou pas)</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="races_Elf.js.html">races/Elf.js</a>, <a href="races_Elf.js.html#line25">line 25</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line152">line 152</a>
     </li></ul></dd>
     
 
@@ -1388,7 +1270,7 @@ le type d'ennemi (qui vole ou pas)</p>
 
 
 <div class="description">
-    <p>Monte le niveau du héros
+    <p>Monte le niveau du ennemi
 s'il atteint 10 de xp</p>
 </div>
 
@@ -1410,11 +1292,6 @@ s'il atteint 10 de xp</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#setLvl">Hero#setLvl</a>
-    </li></ul></dd>
     
 
     
@@ -1438,7 +1315,7 @@ s'il atteint 10 de xp</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line91">line 91</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line98">line 98</a>
     </li></ul></dd>
     
 
@@ -1482,7 +1359,7 @@ s'il atteint 10 de xp</p>
 
 
 <div class="description">
-    <p>Définis le prénom du héros</p>
+    <p>Définis le prénom du ennemi</p>
 </div>
 
 
@@ -1534,7 +1411,7 @@ s'il atteint 10 de xp</p>
 
             
 
-            <td class="description last"><p>prénom du héros</p></td>
+            <td class="description last"><p>prénom du ennemi</p></td>
         </tr>
 
     
@@ -1552,11 +1429,6 @@ s'il atteint 10 de xp</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#setName">Hero#setName</a>
-    </li></ul></dd>
     
 
     
@@ -1580,7 +1452,7 @@ s'il atteint 10 de xp</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line35">line 35</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line41">line 41</a>
     </li></ul></dd>
     
 
@@ -1624,7 +1496,7 @@ s'il atteint 10 de xp</p>
 
 
 <div class="description">
-    <p>Définis la race du héros</p>
+    <p>Définis la race du ennemi</p>
 </div>
 
 
@@ -1676,7 +1548,7 @@ s'il atteint 10 de xp</p>
 
             
 
-            <td class="description last"><p>race du héros</p></td>
+            <td class="description last"><p>race du ennemi</p></td>
         </tr>
 
     
@@ -1694,11 +1566,6 @@ s'il atteint 10 de xp</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#setRace">Hero#setRace</a>
-    </li></ul></dd>
     
 
     
@@ -1722,7 +1589,7 @@ s'il atteint 10 de xp</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line129">line 129</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line134">line 134</a>
     </li></ul></dd>
     
 
@@ -1766,7 +1633,7 @@ s'il atteint 10 de xp</p>
 
 
 <div class="description">
-    <p>Ajoute de l'experience au héros,
+    <p>Ajoute de l'experience au ennemi,
 ou se reinitialise quand il atteint 10</p>
 </div>
 
@@ -1788,11 +1655,6 @@ ou se reinitialise quand il atteint 10</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Hero.html#setXp">Hero#setXp</a>
-    </li></ul></dd>
     
 
     
@@ -1816,7 +1678,7 @@ ou se reinitialise quand il atteint 10</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Hero.js.html">Hero.js</a>, <a href="Hero.js.html#line109">line 109</a>
+        <a href="Enemy.js.html">Enemy.js</a>, <a href="Enemy.js.html#line112">line 112</a>
     </li></ul></dd>
     
 

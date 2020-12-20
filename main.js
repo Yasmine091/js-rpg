@@ -1,6 +1,3 @@
-import Hero from './lib/Hero.js';
-import Enemy from './lib/Enemy.js';
-
 import Battle from './lib/Battle.js';
 import BattleSimulation from './lib/BattleSim.js';
 
@@ -15,14 +12,15 @@ import Griffin from '../../lib/enemies/Griffin.js';
 import Berserker from '../../lib/enemies/Berserker.js';
 import Werewolf from '../../lib/enemies/Werewolf.js';
 
-import { clearSimulation, clearStats, selectTerminal, enableButtons, disableButtons } from '../../lib/functions.js';
+import { clearSimulation, clearStats, selectTerminal, enableButtons, disableButtons, enableRBB, disableRBB } from '../../lib/functions.js';
 
 
 /* import Enemy from './lib/Enemy.js';
 import Battle from './lib/Battle.js'; */
 
+disableRBB();
 
-function customRPG() {
+function customRPG(type) {
 
     let race1 = document.getElementById("player-1").selectedIndex;
     let race2 = document.getElementById("player-2").selectedIndex;
@@ -93,7 +91,12 @@ function customRPG() {
             break;
     }
 
+    if(type == "simulation"){
     return new BattleSimulation(player1, player2);
+    }
+    if(type == "battle"){
+    return new Battle(player1, player2);
+    }
 
 }
 
@@ -106,7 +109,7 @@ runSim1.addEventListener('click', async function () {
 
     location.href = "#Game";
 
-    let simBattle = customRPG();
+    let simBattle = customRPG("simulation");
 
     while (running === false && stopped === false) {
 
@@ -114,6 +117,7 @@ runSim1.addEventListener('click', async function () {
 
         if(running === true && stopped === false){
             disableButtons();
+            disableRBB();
         }
         
         selectTerminal("simulation");
@@ -138,7 +142,7 @@ runBattle.addEventListener('click', async function () {
 
     location.href = "#Game";
 
-    let simBattle = customRPG();
+    let realBattle = customRPG("battle");
 
     while (running === false && stopped === false) {
 
@@ -146,20 +150,45 @@ runBattle.addEventListener('click', async function () {
 
         if(running === true && stopped === false){
             disableButtons();
+            enableRBB();
         }
         
         selectTerminal("battle");
         clearStats("p1-Stats");
         clearStats("p2-Stats");
         clearSimulation();
-        let dead = await simBattle.EnemyVsEnemy();
+        
+        document.getElementById("start").addEventListener('click', async function()
+        {
+            let start = await realBattle.gameStarts();
+            if(start === true){
+                realBattle.p2Attack();
+                document.getElementById('start').disabled = true;
+            }
+        });
+
+        document.getElementById("attack").addEventListener('click', async function (){
+            let p1Dead = await realBattle.p1Attack();
+            let p2Dead = await realBattle.p2Attack();
+            if(p1Dead === true || p2Dead === true){
+                running = false;
+                stopped = true;
+                enableButtons();
+                document.getElementById('attack').disabled = true;
+            }
+        });
+
+        document.getElementById("restart").addEventListener('click', function (){
+            selectTerminal("battle");
+            clearStats("p1-Stats");
+            clearStats("p2-Stats");
+            clearSimulation();
+            realBattle.restart();
+            document.getElementById('start').disabled = false;
+            document.getElementById('attack').disabled = false;
+        });
 
         
-        if(dead === true){
-            running = false;
-            stopped = true;
-            enableButtons();
-        }
     }
 
 }
@@ -172,7 +201,7 @@ runSim2.addEventListener('click', async function () {
 
     location.href = "#Game";
 
-    let simBattle = customRPG();
+    let simBattle = customRPG("simulation");
 
     while (running === false && stopped === false) {
 
@@ -180,6 +209,7 @@ runSim2.addEventListener('click', async function () {
 
         if(running === true && stopped === false){
             disableButtons();
+            disableRBB();
         }
 
         selectTerminal("simulation");

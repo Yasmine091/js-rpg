@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Hero.js</title>
+    <title>JSDoc: Source: Enemy.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Hero.js</h1>
+    <h1 class="page-title">Source: Enemy.js</h1>
 
     
 
@@ -28,157 +28,159 @@
         <article>
             <pre class="prettyprint source linenums"><code>import { send } from '../../lib/functions.js';
 
-/** Classe qui répresente un Héros */
-export default class Hero {
-    name = '';
-    race = '';
-    health = 500;
-    level = 1;
-    experience = 0;
-    hitStrength = 30;
+/** Classe qui répresente un Ennemi */
+export default class Enemy {
+      level = 1;
+      experience = 0;
+      health = 500;
+      hitStrength = 30;
+      name = '';
+      race = '';
 
-    /**
-     * Crée un héros avec le prénom et la
+   /**
+     * Crée un ennemi avec le prénom et la
      * race proposées par l'utilisateur
-     * @param {string} name prenom du héros
-     * @param {string} race race du héros
+     * @param {string} name prenom du ennemi
+     * @param {string} race race du ennemi
      */
-    constructor(name, race) {
-        this.name = name;
-        this.race = race;
+
+    constructor(name,race) {
+      this.name = name;
+     
+      this.race = race;
+
+      
     }
 
-    /**
-     * Renvoie le prénom du héros
-     * @returns {string} prénom du héros
-     */
-    getName() {
-        return this.name;
-    }
+
+
+
 
     /**
-     * Définis le prénom du héros
-     * @param {string} name prénom du héros
+     * Renvoie le prénom du ennemi
+     * @returns {string} prénom du ennemi
      */
-    setName(name) {
-        this.name = name;
-    }
+    getName(){return this.name}; 
 
-    /**
-     * Renvoie la santé du héros
-     * @returns {number} santé du héros
+       /**
+     * Définis le prénom du ennemi
+     * @param {string} name prénom du ennemi
      */
-    getHealth() {
-        return this.health;
-    }
+    setName(value){this.name = value};
+    
+        /**
+     * Renvoie la santé du ennemi
+     * @returns {number} santé du ennemi
+     */
+    getHealth(){
+      if(this.health&lt;=0){this.die()}
+      return this.health;
 
-    /**
-     * Définis la santé du héros en
+    };
+    
+        /**
+     * Définis la santé du ennemi en
      * fonction des dégats reçus
      * @param {number} damage dégats reçus
      */
-    setHealth(damage) {
-        if (this.race != "Dwarf") {
+      setHealth(damage) {
+        if (this.race == "Assassin") {
             send("&lt;b>" + this.name + "&lt;/b> received " + damage + " of damage", "hurt");
             this.health -= damage;
         }
     }
+    
 
-    /**
-     * Quand le héros lance une attaque, la
+          /**
+     *  
      * fonction renvoie les dégats provoqués
      * @returns {number} dégats provoqués
      */
-    attack() {
-        let damage = this.hitStrength * this.level;
+    attack(){
+      if(this.race !== "Dragon" &amp;&amp; this.race !== "Griffin" &amp;&amp; this.race !=="Assassin"){
+        let damage = this.hitStrength*this.level;
         return damage;
-    }
-
-    /**
-     * Quand le héros meurt, la fonction
+      }
+     
+  };
+    
+     /**
+     * la fonction
      * renvoie une fonction qui lance un
      * message de décés dans le HTML
      * @returns {typedef} fonction avec le message de déces
      */
-    die() {
-        return send("&lt;b>" + this.name + "&lt;/b> died!", "death");
-    }
+    die(){send("&lt;b>" + this.name + "&lt;/b> is dead!")};
+    
 
-    /**
-     * Renvoie le niveau du héros
-     * @returns {number} niveau du héros
+        /**
+     * 
+     * @returns {number} niveau du ennemi
      */
-    getLvl() {
-        return this.level;
-    }
-
-    /**
-     * Monte le niveau du héros
+    getLvl(){ return this.level};
+    
+        /**
+     * Monte le niveau du ennemi
      * s'il atteint 10 de xp
      */
-    setLvl() {
-        if (this.experience == 10) {
-            this.level += 1;
-        }
-    }
-
-    /**
-     * Renvoie l'experience du héros
-     * @return {number} experience du héros
+    setLvl(){    if (this.experience == 10) {
+      this.level += 1;
+  }
+};
+       /**
+     * Renvoie l'experience du ennemi
+     * @return {number} experience du ennemi
      */
-    getXp() {
-        return this.experience;
-    }
+    getXp(){ return this.experience};
 
-    /**
-     * Ajoute de l'experience au héros,
+        /**
+     * Ajoute de l'experience au ennemi,
      * ou se reinitialise quand il atteint 10
      */
-    setXp() {
-        if (this.experience == 10) {
+    setXp(){        if (this.experience == 10) {
             this.experience = 0;
             this.experience += 2;
         } else {
             this.experience += 2;
         }
-    }
 
-    /**
-     * Renvoie la race du héros
+  };
+    
+
+
+      /**
+     * Renvoie la race du ennemi
      */
     getRace() {
-        return this.race;
-    }
+      return this.race;
+  }
 
-    /**
-     * Définis la race du héros
-     * @param {string} race race du héros
-     */
-    setRace(race) {
-        this.race = race;
-    }
+  /**
+   * Définis la race du ennemi
+   * @param {string} race race du ennemi
+   */
+  setRace(race) {
+      this.race = race;
+  }
 
-    /**
+   /**
      * Renvoie la puissance
-     * de l'attaque du héros
+     * de l'attaque du ennemi
      * @returns {number} puissance d'attaque
      */
-    getHitStrength() {
-        return this.hitStrength;
-    }
 
-    /**
+    getHitStrength(){ return this.hitStrength};
+
+
+     /**
      * Définis la puissance
-     * de l'attaque du héros
+     * de l'attaque du ennemi
      * @returns {number} puissance d'attaque
      */
-    setHitStrength() {
-        if (this.race == "Dwarf") {
-            return this.hitStrength;
-        }
-    }
-}
-</code></pre>
+    setHitStrength(value){ this.hitStrength = value};
+  }
+
+  </code></pre>
         </article>
     </section>
 

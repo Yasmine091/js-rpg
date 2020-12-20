@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: races/Dwarf.js</title>
+    <title>JSDoc: Source: enemies/Golem.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: races/Dwarf.js</h1>
+    <h1 class="page-title">Source: enemies/Golem.js</h1>
 
     
 
@@ -26,43 +26,30 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import Hero from '../../lib/Hero.js';
+            <pre class="prettyprint source linenums"><code>import Enemy from '../../lib/Enemy.js';
 import { send } from '../../lib/functions.js';
 
 /**
- * Classe qui répresente la race Dwarf
- * @augments Hero
+ * Classe qui répresente la race Golem
+ * @augments Enemy
  */
-export default class Dwarf extends Hero {
+export default class Golem extends Enemy {
 
-    /**
-     * Crée un héros avec le prénom et la
-     * race proposées par l'utilisateur
-     * @param {string} name prenom du héros
-     * @param {string} race race du héros
-     */
-    constructor(name, race) {
-        super(name, race);
-    }
-
-    /**
-     * Définis la santé du héros selon
-     * avec une probabilité de 20% de
-     * reçevoir la moitié des dégats
-     * @param {number} damage dégats réçus
-     */
-    setHealth(damage) {
-        let probability = Math.floor(Math.random() * 100);
-
-        if (probability &lt;= 20) {
-            send("&lt;b>" + this.name + "&lt;/b> received " + damage / 2 + " of damage", "hurt");
-            this.health -= damage / 2;
+        /**
+        * Définis la santé de l'ennemi en
+        * fonction des dégats reçus
+        * @param {number} damage dégats reçus
+        */
+        setHealth(damage) {
+                if (Math.random() &lt; 0.5) {
+                        send("&lt;b>" + this.name + "&lt;/b> got lucky and received no damage!", "hurt"); // 50% chance to cancel damage
+                }
+                else {
+                        this.health = this.health - damage;
+                        send("&lt;b>" + this.name + "&lt;/b> received " + damage + " of damage", "hurt");
+                }
         }
-        else {
-            send("&lt;b>" + this.name + "&lt;/b> received " + damage + " of damage", "hurt");
-            this.health -= damage;
-        }
-    }
+
 }</code></pre>
         </article>
     </section>
