@@ -1,10 +1,20 @@
+import Hero from './lib/Hero.js';
+import Enemy from './lib/Enemy.js';
+
+import Battle from './lib/Battle.js';
 import BattleSimulation from './lib/BattleSim.js';
+
 import Human from './lib/races/Human.js'
 import Elf from './lib/races/Elf.js'
 import Dwarf from './lib/races/Dwarf.js'
-import Dragon from './lib/enemies/Dragon.js';
-import Hero from './lib/Hero.js';
-import Enemy from './lib/Enemy.js';
+
+import Dragon from '../../lib/enemies/Dragon.js';
+import Golem from '../../lib/enemies/Golem.js';
+import Assassin from '../../lib/enemies/Assassin.js';
+import Griffin from '../../lib/enemies/Griffin.js';
+import Berserker from '../../lib/enemies/Berserker.js';
+import Werewolf from '../../lib/enemies/Werewolf.js';
+
 import { clearSimulation, clearStats, selectTerminal, enableButtons, disableButtons } from '../../lib/functions.js';
 
 
@@ -143,6 +153,8 @@ runBattle.addEventListener('click', async function () {
         clearStats("p2-Stats");
         clearSimulation();
         let dead = await simBattle.EnemyVsEnemy();
+
+        
         if(dead === true){
             running = false;
             stopped = true;

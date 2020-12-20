@@ -56,9 +56,9 @@
                         </select>
                     </div>
                     <div>
-                        <button type="submit" id="start-sim1" class="hp">Run simulation</button>
                         <button type="submit" id="battle" class="lvl">Start a battle</button>
-                        <button type="submit" id="start-sim2" class="xp">One vs All</button>
+                        <button type="submit" id="start-sim1" class="hp">Run simulation 1vs1</button>
+                        <button type="submit" id="start-sim2" class="xp">Run simulation 1vsAll</button>
                     </div>
                 </div>
             </form>
@@ -71,16 +71,19 @@
                     names and races,
                     you can choose up to 9 races that include both Heroes and Enemies.</p>
 
-                <p class="hp">To start a simulation you need to customize both of your fighters and then click the <b>"Run
-                    simulation"</b> button.
-                    Simulations are automatized fights between your heroes, wich means you won't be able to interact.
-                </p>
-
-                <p class="lvl">You can start a battle by customizing your fighters and clicking the <b>"Start game"</b> button.
-                    Unlike the simulation, this mode allows you to manually start the battle, attack and restart the game if
+                <p class="lvl">You can start a battle by customizing your fighters and clicking the <b>"Start game"</b>
+                    button.
+                    Unlike the simulation, this mode allows you to manually start the battle, attack and restart the
+                    game if
                     wanted to.</p>
 
-                <p class="xp">By clicking the <b>"One vs All"</b> button, your <b class="race">first
+                <p class="hp">To start a simulation you need to customize both of your fighters and then click the
+                    <b>"Run simulation 1vs1"</b> button.
+                    Simulations are automatized fights between your heroes/enemies, wich means you won't be able to
+                    interact.
+                </p>
+
+                <p class="xp">By clicking the <b>"Run simulation 1vsAll"</b> button, your <b class="race">first
                         fighter</b> will fight against every signle enemie of the game.
                     Because of this, you won't need to customize your <b class="attack">second fighter</b> since it's a
                     One VS All fight.</p>
@@ -90,16 +93,17 @@
         <div id="Game">
             <div id="simulation" class="terminal">
                 <h4 id="term-title">Battle</h4>
-                <br>
-                <div id="battle-1">
-
-                </div>
-                <div id="top-btns"></div>
                 <h4 id="term-btns">
                     <button type="submit" id="start">Start</button>
                     <button type="submit" id="attack">Attack</button>
                     <button type="submit" id="restart">Restart</button>
                 </h4>
+                <br>
+                <br>
+                <br>
+                <div id="battle-1">
+
+                </div>
             </div>
             <div id="simulation-stats" class="terminal">
                 <h4 id="stats-title">Battle stats</h4>

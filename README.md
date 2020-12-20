@@ -7,6 +7,8 @@
     cd js-rpg/
     php -S 0.0.0.0:8000
 ```
+## Dépendances
+* JSDoc : https://github.com/jsdoc/jsdoc
 
 ## Version en ligne
 * https://qy-rpg.surge.sh

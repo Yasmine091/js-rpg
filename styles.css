@@ -128,26 +128,13 @@ h4#term-title{
 h4#term-btns{
     text-align: center;
     color: rgb(165, 113, 207);
-    background-color: rgb(20, 17, 46);
+    background-color: rgb(32, 28, 56);
     padding: 0.5rem 0rem;
-    margin: 0rem;
+    margin: 2.1rem 0rem;
     position: absolute;
     display: block;
     width: inherit;
-    max-width: 27.8rem;
-    border-bottom-left-radius: 0.1rem;
-    border-bottom-right-radius: 0.1rem;
-    border: 2px solid rgb(20, 17, 46);
-}
-
-div#top-btns{
-    text-align: center;
-    padding: 0.5rem 0rem;
-    margin: 0rem;
-    display: block;
-    width: inherit;
-    height: 72%;
-    max-width: 25rem;
+    max-width: 28rem;
 }
 
 h4#term-btns button{
