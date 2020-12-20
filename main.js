@@ -5,7 +5,7 @@ import Dwarf from './lib/races/Dwarf.js'
 import Dragon from './lib/enemies/Dragon.js';
 import Hero from './lib/Hero.js';
 import Enemy from './lib/Enemy.js';
-import { clearSimulation, clearStats, selectTerminal } from '../../lib/functions.js';
+import { clearSimulation, clearStats, selectTerminal, enableButtons, disableButtons } from '../../lib/functions.js';
 
 
 /* import Enemy from './lib/Enemy.js';
@@ -90,64 +90,97 @@ function customRPG() {
 let running = false;
 
 let runSim1 = document.getElementById("start-sim1");
-runSim1.addEventListener('click', function () {
-    
+runSim1.addEventListener('click', async function () {
+
+    let stopped = false;
+
     location.href = "#Game";
-    
+
     let simBattle = customRPG();
-    
-    while (running === false) {
-        
+
+    while (running === false && stopped === false) {
+
         running = true;
+
+        if(running === true && stopped === false){
+            disableButtons();
+        }
+        
         selectTerminal("simulation");
         clearStats("p1-Stats");
         clearStats("p2-Stats");
         clearSimulation();
-        simBattle.EnemyVsEnemy();
-
+        let dead = await simBattle.EnemyVsEnemy();
+        if(dead === true){
+            running = false;
+            stopped = true;
+            enableButtons();
+        }
     }
-
+    
 }
 );
 
 let runBattle = document.getElementById("battle");
-runBattle.addEventListener('click', function () {
-    
+runBattle.addEventListener('click', async function () {
+
+    let stopped = false;
+
     location.href = "#Game";
-    
+
     let simBattle = customRPG();
-    
-    while (running === false) {
-        
+
+    while (running === false && stopped === false) {
+
         running = true;
+
+        if(running === true && stopped === false){
+            disableButtons();
+        }
+        
         selectTerminal("battle");
         clearStats("p1-Stats");
         clearStats("p2-Stats");
         clearSimulation();
-        simBattle.EnemyVsEnemy();
-
+        let dead = await simBattle.EnemyVsEnemy();
+        if(dead === true){
+            running = false;
+            stopped = true;
+            enableButtons();
+        }
     }
 
 }
 );
 
 let runSim2 = document.getElementById("start-sim2");
-runSim2.addEventListener('click', function () {
-    
+runSim2.addEventListener('click', async function () {
+
+    let stopped = false;
+
     location.href = "#Game";
-    
+
     let simBattle = customRPG();
-    
-    while (running === false) {
-        
+
+    while (running === false && stopped === false) {
+
         running = true;
+
+        if(running === true && stopped === false){
+            disableButtons();
+        }
+
         selectTerminal("simulation");
         clearStats("p1-Stats");
         clearStats("p2-Stats");
         clearSimulation();
-        simBattle.HeroVsEnemies();
-
+        let dead = await simBattle.HeroVsEnemies();
+        if(dead === true){
+            running = false;
+            stopped = true;
+            enableButtons();
+        }
     }
-
+    
 }
 );
