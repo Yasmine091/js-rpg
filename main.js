@@ -151,6 +151,8 @@ runBattle.addEventListener('click', async function () {
         if(running === true && stopped === false){
             disableButtons();
             enableRBB();
+            document.getElementById('attack').disabled = true;
+            document.getElementById('restart').disabled = true;
         }
         
         selectTerminal("battle");
@@ -163,6 +165,7 @@ runBattle.addEventListener('click', async function () {
             let start = await realBattle.gameStarts();
             if(start === true){
                 realBattle.p2Attack();
+                enableRBB();
                 document.getElementById('start').disabled = true;
             }
         });
@@ -184,7 +187,10 @@ runBattle.addEventListener('click', async function () {
             clearStats("p2-Stats");
             clearSimulation();
             realBattle.restart();
-            document.getElementById('start').disabled = false;
+            running = true;
+            stopped = false;
+            disableButtons();
+            document.getElementById('start').disabled = true;
             document.getElementById('attack').disabled = false;
         });
 
